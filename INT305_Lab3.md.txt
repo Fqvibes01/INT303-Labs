@@ -1,0 +1,42 @@
+# INT305 Lab 3: Strengthening System Security
+
+## 1. adduser.conf
+Modified /etc/adduser.conf using sudo nano:
+- Changed Home Directory to /mnt/users.
+- Changed UID range: 2000-2999. GID range: 3000-3999.
+- Disabled user-specific groups (USERGROUPS=no).
+- Added custom welcome file: echo "Welcome!" | sudo tee /etc/skel/welcome.txt.
+- Tested with sudo adduser testuser and verified with grep testuser /etc/passwd.
+
+## 2. Access Control Lists (ACLs)
+Set up /projects/team_project with ACLs and the sticky bit:
+- Alice: sudo setfacl -m u:alice:rwx /projects/team_project
+- Bob: sudo setfacl -m u:bob:rx /projects/team_project
+- Charlie: sudo setfacl -m u:charlie:rw /projects/team_project and sudo chmod +t /projects/team_project
+- *Explanation:* ACLs provide granular user permissions, while the sticky bit (+t) prevents users like Charlie from deleting files they don't own, even if they have write access.
+
+## 3. Sudo Privilege Management
+Configured users using sudo visudo:
+- *John:* Added to sudo group (sudo usermod -aG sudo john).
+- *Mary:* mary ALL=(ALL) NOPASSWD: /usr/bin/apt update, /usr/bin/apt upgrade
+- *Paul:* paul ALL=(ALL) NOPASSWD: /bin/systemctl restart apache2, /bin/systemctl restart mysql
+- *Explanation:* The sudoers file enforces the Principle of Least Privilege, allowing specific users to run only necessary commands without giving them full root access.
+
+## 4. Securing Network & SSH
+- Closed ports: Stopped Apache (systemctl stop apache2).
+- Secured SSH (/etc/ssh/sshd_config): Changed port to 2222, set PasswordAuthentication no, and PermitRootLogin no.
+- 2FA: Installed libpam-google-authenticator, configured the user, and added auth required pam_google_authenticator.so to /etc/pam.d/common-auth.
+
+## 5. login.defs Password Policies
+Modified /etc/login.defs to enforce:
+- PASS_MAX_DAYS 90
+- PASS_MIN_DAYS 7
+- PASS_WARN_AGE 14
+Verified with sudo chage -l testuser.
+
+## 6. System Auditing with auditd
+- Installed and started auditd.
+- Added rules to /etc/audit/rules.d/audit.rules:
+  - -w /var/log/auth.log -p wa -k user-logins
+  - -w /etc/passwd -p wa -k passwd-modifications
+- Restarted service and verified logs using sudo ausearch -k user-logins.
