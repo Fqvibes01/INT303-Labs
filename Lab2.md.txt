@@ -1,0 +1,30 @@
+# INT303 Lab 2: Network Interfaces
+*Student Name:* Farouq
+
+## Exercise 1: Network Interfaces
+*   *Interfaces:* lo (127.0.0.1) and eth0.
+*   *Difference:* lo is internal; eth0 connects externally.
+
+## Exercise 2: Packet Capture
+![Tcpdump](tcpdump.jpg)
+*   *Packets:* I used tcpdump to listen on eth0 for 4 packets.
+
+## Exercise 3: Network Statistics
+*   *Status:* Interfaces are UP.
+*   *Significance:* Detects dropped packets.
+
+## Exercise 4: Wireshark/Tcpdump
+*   *Details:* Shows source/dest IPs and TCP flags.
+*   *TCP/IP Model:* App -> Transport -> Internet -> Link.
+
+## Exercise 5: Packet Transmission
+*   *Observation:* Continuous round-trip of ICMP Requests/Replies.
+
+## Exercise 6: Troubleshooting
+*   *Admin Use:* Isolates issues by cycling interfaces.
+
+## Exercise 7: Bandwidth Monitoring
+*   *Usage:* Low for web requests. *Impact:* No congestion.
+
+## Exercise 8: Advanced Filters
+*   *Significance:* Removes noise to focus on specific traffic.

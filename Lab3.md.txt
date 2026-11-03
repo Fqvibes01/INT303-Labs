@@ -1,0 +1,16 @@
+# INT303 Lab 3: DNS and HTTP Analysis
+*Student Name:* Farouq
+
+## Exercise 1: DNS Resolution
+*   *Command used:* nslookup google.com
+*   *Observation:* The DNS server successfully resolved the domain name (google.com) into its corresponding IPv4 addresses. This translates human-readable names into IP addresses so computers can communicate.
+
+## Exercise 2: HTTP Traffic
+*   *Command used:* curl -I http://example.com
+*   *Observation:* I observed the HTTP GET request from the client and the HTTP 200 OK response from the server. The headers show the server type and content type (text/html), demonstrating Application Layer communication.
+
+## Exercise 3: TCP Handshake
+*   *Observation:* Before HTTP data is sent, a TCP 3-way handshake occurs. The client sends a *SYN* packet, the server replies with a *SYN-ACK* packet, and the client finishes with an *ACK*. This ensures a reliable connection before web data is transmitted.
+
+## Conclusion
+This lab demonstrated how DNS resolves names and how HTTP uses a reliable TCP connection to fetch web pages. Understanding these protocols is fundamental to network troubleshooting and web security.
