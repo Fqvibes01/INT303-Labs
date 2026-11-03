@@ -1,0 +1,16 @@
+# INT305: Network Security and Protocols - Lab 2
+Student Name: Farouq
+
+## 1. Commands Used for Checking and Modifying Permissions
+ Check permissions: ls -l filename
+ Modify (numeric): chmod 755 filename and chmod 755 directoryname
+ Modify (symbolic): chmod u+x filename
+ Change ownership: chown -R owner:group directoryname
+
+## 2. Exercise Commands (my_project)
+ mkdir my_project
+ chmod 755 my_project
+ chown student1:students my_project
+
+## 3. Significance in Cybersecurity
+File and directory permissions are critical for the Principle of Least Privilege. If permissions are too broad (like 777), any user can read, modify, or execute sensitive data. Setting correct permissions (like 755 for directories) restricts unauthorized access, prevents data breaches, and stops attackers from modifying system files.
