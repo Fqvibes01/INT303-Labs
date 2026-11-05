@@ -1,0 +1,16 @@
+# Lab 4: Linux File Systems and Commands
+
+# Part 1 & 2: Linux Basics
+VFS (Virtual File System): A kernel layer that allows Linux to seamlessly read and write to multiple different file systems. 
+Directory Structure: The root directory (/) is the top of the hierarchy, containing folders like /home, /etc, /usr, and /var.
+
+# Part 3 & 4: Path and Commands
+Path Variable (echo $PATH): Tells the shell where to find executable programs.
+File Management: Used mkdir, touch, cp, and rm to create and manage files inside the forensics_lab directory.
+
+# Part 5 & 6: Search and Networking
+find: Located specific .txt files within directories.
+Networking: Used ifconfig to check IP addresses and nmap to scan local port 21 (FTP).
+
+# Part 7 & 8: Scripting
+Zipped and unzipped the forensics_lab directory. Created a bash script (sys_info.sh) containing uname -a, free -h, and df -h. Made it executable using chmod +x.
