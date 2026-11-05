@@ -1,0 +1,13 @@
+# Lab 2: Computer Systems and Storage
+
+# Part 1: Computer Architecture
+Data Flow: Data flows from input devices into RAM, is processed by the CPU, and is sent to output devices or storage. Programs are executed via the CPU fetch decode execute cycle.
+
+# Part 2: Forensics Challenges
+Encryption: Hides data, but can be bypassed using memory analysis (RAM dumping).
+Data Volatility: RAM is lost on shutdown, requiring live memory dumps.
+Anti-Forensics: Wiped data requires file-carving tools (like PhotoRec) to recover fragments from unallocated space.
+
+# Part 3: Disk Geometry and File Systems
+Calculation: 12,000 cylinders x 10 heads x 500 sectors = 60,000,000 total sectors.
+File Systems: NTFS is best for Windows due to strong security and journaling. EXT4 is best for Linux due to speed and stability. FAT32 is best for USB drives due to universal cross-platform compatibility.
