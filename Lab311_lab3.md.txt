@@ -1,0 +1,13 @@
+# Lab 3: Windows File System and Scripting
+
+# Part 1 & 2: File Management
+Created a folder named workspace4 on the desktop. Inside it, created file1.txt, file2.txt, and file3.txt. Used the Command Prompt to delete file3.txt using the del command.
+
+# Part 3: Networking
+ipconfig: Displays local IP, subnet, and gateway.
+ping: Tests internet connectivity.
+tracert: Maps the network route to a destination.
+netstat -a: Shows all active network connections and open ports.
+
+# Part 4: Batch Scripting
+Created a batch file named sys_info.bat containing the systeminfo command. Added a new folder (C:\Scripts) to the Windows Environment Path variable so the script can be executed from any directory.
